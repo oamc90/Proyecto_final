@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app1',
+    'ckeditor',
+    'app2',
+
 ]
 
 MIDDLEWARE = [
@@ -55,7 +58,8 @@ ROOT_URLCONF = 'pfinal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/omedina/Documents/Documentos oscar/Proyecto django/pfinal/app1/template', ],
+        'DIRS': ['C:/Users/omedina/Documents/Documentos oscar/Proyecto django/pfinal/app1/template', 
+        'C:/Users/omedina/Documents/Documentos oscar/Proyecto django/pfinal/app2/template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,6 +116,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+LOGIN_URL="/app1/login"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -122,3 +127,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
